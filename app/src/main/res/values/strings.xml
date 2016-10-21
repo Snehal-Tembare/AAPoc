@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">AAPoc</string>
+    <string name="bottom_sheet">Bottom Sheet</string>
+    <string name="bottom_sheet_click">Open Bottom Sheet</string>
+    <string name="persistent_sheet_click">Open Persistent Sheet</string>
+    <string name="snackbar">SnackBar and Toasts</string>
+    <string name="show_snackbar">Show SnackBar</string>
+    <string name="simple_snackbar">Simple Snackbar</string>
+    <string name="action_snackbar">Action SnackBar</string>
+    <string name="custom_snackbar">Custom SnackBar</string>
+    <string name="chat_activity">Chat Activity</string>
+    <string name="progress">Progress Indicators</string>
+    <string name="introslider">Introslider</string>
+    <string name="show_progress_bar">Show ProgressBar</string>
+    <string name="slide_one">Slide One</string>
+    <string name="slide_one_desc">This is a First Slide</string>
+    <string name="slide_two">Slide Two</string>
+    <string name="slide_two_desc">This is a Slide Two</string>
+    <string name="slide_three">Slide Three</string>
+    <string name="slide_three_desc">This is a slide three</string>
+    <string name="slide_four">Slide Four</string>
+    <string name="slide_four_desc">This is slide four</string>
+    <string name="next">next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <array name="bottom_names">
+        <item>@drawable/google_plus</item>
+        <item>@drawable/gmail</item>
+        <item>@drawable/facebook</item>
+        <item>@drawable/facebook_messenger</item>
+        <item>@drawable/plus</item>
+    </array>
+</resources>
