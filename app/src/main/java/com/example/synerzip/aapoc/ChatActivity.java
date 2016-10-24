@@ -12,10 +12,12 @@ import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ChatActivity extends AppCompatActivity {
 
+    @BindView(R.id.layout_chat_parent)
     public RelativeLayout mLayoutParent;
     public FloatingActionMenu floatingActionMenu;
 
@@ -24,7 +26,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         ButterKnife.bind(this);
-        mLayoutParent= (RelativeLayout) findViewById(R.id.layout_chat_parent);
+
         mLayoutParent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,7 +1,6 @@
 package com.example.synerzip.aapoc;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CoordinatorLayout;
@@ -15,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.synerzip.aapoc.Adapter.BottomSheetAdapter;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -25,11 +25,16 @@ import butterknife.OnClick;
 public class BottomSheetActivity extends AppCompatActivity {
 
 
+    @BindView(R.id.button_modal_sheet)
     public Button mBtnModalSheet;
 
+    @BindView(R.id.bottom_sheet)
     public GridView mGridBottomSheet;
+
+    @BindView(R.id.persistent_sheet)
     public View mPersistentSheet;
 
+    @BindView(R.id.coordinatorlayout)
     public CoordinatorLayout coordinatorLayout;
 
     BottomSheetAdapter bottomSheetAdapter;
@@ -46,14 +51,6 @@ public class BottomSheetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_sheet);
         ButterKnife.bind(this);
-        final Handler handler=new Handler();
-
-
-
-        mGridBottomSheet = (GridView) findViewById(R.id.bottom_sheet);
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorlayout);
-        mPersistentSheet = findViewById(R.id.persistent_sheet);
-        mBtnModalSheet=(Button)findViewById(R.id.button_modal_sheet);
 
         //Set bottomsheet adapter(GridView)
         bottomSheetAdapter = new BottomSheetAdapter(this, R.layout.grid_item, bottomItems);
@@ -156,7 +153,7 @@ public class BottomSheetActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.button_persistent_sheet)
-    public void openPersistentBottomSheet(View v) {
+    public void openPersistentBottomSheet() {
         mPersistentSheet.setVisibility(View.VISIBLE);
         if (sheetBehavior.getState()==BottomSheetBehavior.STATE_EXPANDED){
             sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);

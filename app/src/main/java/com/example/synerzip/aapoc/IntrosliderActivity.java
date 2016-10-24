@@ -1,14 +1,14 @@
 package com.example.synerzip.aapoc;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,25 +19,33 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import static com.example.synerzip.aapoc.R.string.next;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class IntrosliderActivity extends AppCompatActivity {
+
+    @BindView(R.id.layout_dots)
     public LinearLayout mDotsLayout;
+
     public TextView[] dots;
     public int[] layouts;
+
+    @BindView(R.id.btn_next)
     public Button mBtnNext;
+
+    @BindView(R.id.btn_skip)
     public Button mBtnSkip;
+
+    @BindView(R.id.view_pager)
     public ViewPager mViewpager;
+
     public  ViewPagerAdapter mViewpagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introslider);
-        mDotsLayout= (LinearLayout) findViewById(R.id.layout_dots);
-        mBtnNext= (Button) findViewById(R.id.btn_next);
-        mBtnSkip= (Button) findViewById(R.id.btn_skip);
-        mViewpager= (ViewPager) findViewById(R.id.view_pager);
+        ButterKnife.bind(this);
 
         layouts=new int[]{R.layout.slide_one,R.layout.slide_two,R.layout.slide_three,R.layout.slide_four};
 
@@ -70,30 +78,30 @@ public class IntrosliderActivity extends AppCompatActivity {
         });
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+
     private void changeStatusBarColor() {
-        Window window=getWindow();
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(Color.TRANSPARENT);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        }
     }
-
     private void addBottomDots(int currentPage) {
 
         dots = new TextView[layouts.length];
 
-        int[] activeColors = new int[]{R.array.array_dot_active};
-        int[] inActiveColors = new int[]{R.array.array_dot_inactive};
+        int activecolor= ContextCompat.getColor(this,R.color.dot_active);
+        int inactivecolor= ContextCompat.getColor(this,R.color.dot_inactive);
         mDotsLayout.removeAllViews();
         for (int i = 0; i <dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(inActiveColors[currentPage]);
+            dots[i].setTextColor(inactivecolor);
             mDotsLayout.addView(dots[i]);
         }
         if (dots.length > 0) {
-            dots[currentPage].setTextColor(activeColors[currentPage]);
+            dots[currentPage].setTextColor(activecolor);
         }
     }
         private int getItem(int i){
@@ -112,7 +120,7 @@ public class IntrosliderActivity extends AppCompatActivity {
                 mBtnNext.setText(R.string.start);
                 mBtnSkip.setVisibility(View.GONE);
             }else {
-                mBtnNext.setText(next);
+                mBtnNext.setText(R.string.next);
                 mBtnSkip.setVisibility(View.VISIBLE);
             }
         }
@@ -157,7 +165,6 @@ public class IntrosliderActivity extends AppCompatActivity {
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-            super.destroyItem(container, position, object);
             View view= (View) object;
             container.removeView(view);
         }

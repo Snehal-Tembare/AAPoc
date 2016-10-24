@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -24,15 +25,28 @@ import butterknife.ButterKnife;
  */
 public class SnackBarActivity extends AppCompatActivity {
 
+    @BindView(R.id.layout_snack_parent)
     public RelativeLayout mLayoutSnackParent;
+
+    @BindView(R.id.button_simple_snackbar)
     public Button mBtnShowSimpleSnackbar;
+
+    @BindView(R.id.button_action_snackbar)
     public Button mBtnShowActionSnackbar;
+
+    @BindView(R.id.button_custom_snackbar)
     public Button mBtnShowCustomeSnackbar;
+
     public Snackbar snackbar;
 
     //Floating action button
+    @BindView(R.id.floating_menu)
     public FloatingActionsMenu mFloatingMenu;
+
+    @BindView(R.id.fab_call)
     public FloatingActionButton mFabCall;
+
+    @BindView(R.id.fab_chat)
     public FloatingActionButton mFabChat;
 
 
@@ -41,15 +55,6 @@ public class SnackBarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_snackbar);
         ButterKnife.bind(this);
-
-        mLayoutSnackParent= (RelativeLayout) findViewById(R.id.layout_snack_parent);
-        mBtnShowSimpleSnackbar = (Button) findViewById(R.id.button_simple_snackbar);
-        mBtnShowActionSnackbar = (Button) findViewById(R.id.button_action_snackbar);
-        mBtnShowCustomeSnackbar = (Button) findViewById(R.id.button_custom_snackbar);
-        mFloatingMenu = (FloatingActionsMenu)findViewById(R.id.floating_menu);
-
-        mFabCall = (FloatingActionButton) findViewById(R.id.fab_call);
-        mFabChat = (FloatingActionButton) findViewById(R.id.fab_chat);
 
         mLayoutSnackParent.setOnClickListener(new View.OnClickListener() {
             @Override

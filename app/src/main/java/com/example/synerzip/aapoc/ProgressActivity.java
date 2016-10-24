@@ -1,12 +1,16 @@
 package com.example.synerzip.aapoc;
 
 import android.app.ProgressDialog;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ProgressActivity extends AppCompatActivity {
@@ -14,16 +18,35 @@ public class ProgressActivity extends AppCompatActivity {
     private int mProgressStatus = 0;
     private int fileSize;
     public Handler handler;
+    private AnimationDrawable loadingViewAnim=null;
 
 
     public ProgressDialog mProgressDialog;
+
+    public ProgressDialog mCustomProgressDialog;
+
+    public TransparentDialog mTransparentProgressDialog;
+
+    public CustomDialog customDialog;
+
+    @BindView(R.id.image_progress_dialog)
+    public ImageView progressImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress);
+        ButterKnife.bind(this);
         handler=new Handler();
         mProgressDialog=new ProgressDialog(ProgressActivity.this);
+        mCustomProgressDialog=new CustomProgressDialog(this,R.color.colorPrimary);
+
+        //customDialog=new CustomDialog(this);
+
+
+
+        mTransparentProgressDialog=new TransparentDialog(this,R.drawable.ic_spinner_frame_48);
+
         mProgressDialog.setMessage("Please wait...");
         mProgressDialog.show();
         handler.postDelayed(new Runnable() {
@@ -32,7 +55,7 @@ public class ProgressActivity extends AppCompatActivity {
 
                 mProgressDialog.dismiss();
             }
-        },5000);
+        },2000);
     }
 
     @OnClick(R.id.button_show_progressbar)
@@ -86,4 +109,59 @@ public class ProgressActivity extends AppCompatActivity {
         }//end of while
         return 100;
     }//end of doOperation
+
+    @OnClick(R.id.button_show_custom_progress_dialog)
+    public void showCustomDialog(){
+
+        mCustomProgressDialog.show();
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                mCustomProgressDialog.dismiss();
+            }
+        },10000);
+    }
+
+    @OnClick(R.id.button_show_transparent_progress_dialog)
+    public void showTransparentDialog(){
+        mTransparentProgressDialog.show();
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mTransparentProgressDialog.dismiss();
+            }
+        },5000);
+
+    }
+
+    @OnClick(R.id.button_image_dialog)
+    public void showImageDialog(){
+        progressImage.setBackgroundResource(R.drawable.custom_progress_white);
+        loadingViewAnim = (AnimationDrawable) progressImage.getBackground();
+
+//        progressImage.postDelayed()
+//
+//        customDialog.show();
+        loadingViewAnim.start();
+
+
+        progressImage.post(new Runnable() {
+            @Override
+            public void run() {
+                loadingViewAnim.stop();
+            }
+        });
+
+        /*progressImage.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+//                customDialog.dismiss();
+                loadingViewAnim.stop();
+            }
+        },5000);*/
+    }
+
 }

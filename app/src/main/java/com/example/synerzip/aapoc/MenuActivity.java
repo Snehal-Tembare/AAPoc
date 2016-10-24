@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -32,26 +31,26 @@ public class MenuActivity extends AppCompatActivity {
             public void run() {
                 mProgressDialog.dismiss();
             }
-        },5000);
+        },1000);
     }
 
     @OnClick(R.id.button_open_bottom_sheet)
-    public void openBottomSheet(View v){
+    public void openBottomSheet(){
         startActivity(new Intent(this,BottomSheetActivity.class));
     }
 
     @OnClick(R.id.button_snackbar)
-    public void openSnackbarActivity(View view){
+    public void openSnackbarActivity(){
      startActivity(new Intent(this,SnackBarActivity.class));
     }
 
     @OnClick(R.id.button_progress)
-    public void openProgressIndicatiors(View view){
+    public void openProgressIndicatiors(){
         startActivity(new Intent(this,ProgressActivity.class));
     }
 
     @OnClick(R.id.button_introslider)
-    public void openIntroslider(View view){
+    public void openIntroslider(){
         startActivity(new Intent(this,IntrosliderActivity.class));
     }
 

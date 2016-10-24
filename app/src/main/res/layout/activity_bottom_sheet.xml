@@ -28,7 +28,6 @@
             android:layout_height="wrap_content"
             android:text="@string/bottom_sheet_click"
             android:gravity="center"
-
             android:layout_marginTop="@dimen/common_dimens_20"
             android:textSize="@dimen/common_text_size_14"/>
         <Button
@@ -37,7 +36,6 @@
             android:layout_height="wrap_content"
             android:text="@string/persistent_sheet_click"
             android:gravity="center"
-            android:onClick="openPersistentBottomSheet"
             android:layout_marginTop="@dimen/common_dimens_20"
             android:textSize="@dimen/common_text_size_14"/>
 

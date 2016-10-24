@@ -3,24 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.synerzip.aapoc.ProgressActivity"
-    android:orientation="vertical">
+    tools:context="com.example.synerzip.aapoc.ProgressActivity">
+
     <Button
         android:id="@+id/button_show_progressbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/show_progress_bar"
-        android:onClick="showProgressBar"/>
+        android:text="@string/show_progress_bar" />
+
+    <Button
+        android:id="@+id/button_show_custom_progress_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_custom" />
+
+    <Button
+        android:id="@+id/button_show_transparent_progress_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/transparent_dialog" />
+
+    <Button
+        android:id="@+id/button_image_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_dialog" />
+
+    <ImageView
+        android:id="@+id/image_progress_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 
     <ProgressBar
         android:id="@+id/progress_bar"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
+        android:visibility="gone" />
 
 </LinearLayout>

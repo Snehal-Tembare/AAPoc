@@ -9,4 +9,5 @@
     <dimen name="common_dimens_10">10dp</dimen>
     <dimen name="common_dimens_4">4dp</dimen>
     <dimen name="common_dimens_3">3dp</dimen>
+    <dimen name="common_dimens_40">40dp</dimen>
 </resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/moon1" android:duration="500"></item>
+    <item android:drawable="@drawable/moon1" android:duration="500"></item>
+    <item android:drawable="@drawable/moon2" android:duration="500"></item>
+    <item android:drawable="@drawable/moon3" android:duration="500"></item>
+    <item android:drawable="@drawable/moon4" android:duration="500"></item>
+    <item android:drawable="@drawable/moon5" android:duration="500"></item>
+    <item android:drawable="@drawable/moon6" android:duration="500"></item>
+    <item android:drawable="@drawable/moon7" android:duration="500"></item>
+    <item android:drawable="@drawable/moon8" android:duration="500"></item>
+    <item android:drawable="@drawable/moon9" android:duration="500"></item>
+    <item android:drawable="@drawable/moon10" android:duration="500"></item>
+    <item android:drawable="@drawable/moon11" android:duration="500"></item>
+</set>
