@@ -27,6 +27,7 @@
     <string name="transparent_dialog">Transparent Dialog</string>
     <string name="please_wait">Please Wait...</string>
     <string name="show_dialog">Show Dialog</string>
+    <string name="collapsible">Collapsible Toolbar</string>
     <array name="bottom_names">
         <item>@drawable/google_plus</item>
         <item>@drawable/gmail</item>

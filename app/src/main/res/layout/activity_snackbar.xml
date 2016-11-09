@@ -43,38 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        app:menu_fab_size="mini"
-        app:menu_showShadow="true"
-        app:menu_shadowColor="#66000000"
-        app:menu_shadowRadius="@dimen/common_dimens_4"
-        app:menu_shadowXOffset="@dimen/common_dimens_4"
-        app:menu_shadowYOffset="@dimen/common_dimens_4"
-        app:menu_colorNormal="#03A9F4"
-        app:menu_colorPressed="#039BE5"
-        app:menu_colorRipple="#99FFFFFF"
-        app:menu_animationDelayPerItem="50"
-        app:menu_buttonSpacing="0dp"
-        app:menu_labels_margin="0dp"
-        app:menu_fab_show_animation="@anim/fab_slide_in_from_right"
-        app:menu_fab_hide_animation="@anim/fab_slide_out_to_right"
-        app:menu_labels_padding="@dimen/common_dimens_4"
-        fab:menu_labels_paddingTop="4dp"
-        fab:menu_labels_paddingRight="8dp"
-        fab:menu_labels_paddingBottom="4dp"
-        fab:menu_labels_paddingLeft="8dp"
         app:fab_expandDirection="left"
-        app:menu_labels_textColor="@color/common_white"
-        app:menu_labels_textSize="@dimen/common_text_size_14"
-        app:menu_labels_cornerRadius="@dimen/common_dimens_3"
-        app:menu_labels_colorNormal="#333333"
-        app:menu_labels_colorPressed="#444444"
-        app:menu_labels_colorRipple="#66FFFFFF"
-        app:menu_labels_showShadow="true"
-        app:menu_labels_style="@android:color/transparent"
-        app:menu_labels_ellipsize="none"
-        app:menu_labels_maxLines="-1"
-        app:menu_labels_position="left"
-        app:elevation="@dimen/common_dimens_4"
+
         app:layout_behavior="com.example.synerzip.aapoc.FloatingActionButtonBehavior"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true">
@@ -86,7 +56,7 @@
             android:layout_height="5dp"
             android:src="@android:drawable/ic_menu_call"
             app:rippleColor="#03A9F4"
-            app:fab_label="Call"
+
             app:fab_size="mini"
             />
 
@@ -97,7 +67,7 @@
             app:rippleColor="#03A9F4"
             app:fab_size="mini"
             android:src="@android:drawable/sym_action_chat"
-            app:fab_label="Chat" />
+         />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
     </android.support.design.widget.CoordinatorLayout>

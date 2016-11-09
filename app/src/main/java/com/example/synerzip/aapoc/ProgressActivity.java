@@ -142,26 +142,15 @@ public class ProgressActivity extends AppCompatActivity {
         progressImage.setBackgroundResource(R.drawable.custom_progress_white);
         loadingViewAnim = (AnimationDrawable) progressImage.getBackground();
 
-//        progressImage.postDelayed()
-//
-//        customDialog.show();
         loadingViewAnim.start();
 
 
-        progressImage.post(new Runnable() {
+        progressImage.postDelayed(new Runnable() {
             @Override
             public void run() {
                 loadingViewAnim.stop();
             }
-        });
-
-        /*progressImage.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-//                customDialog.dismiss();
-                loadingViewAnim.stop();
-            }
-        },5000);*/
+        },1000);
     }
 
 }

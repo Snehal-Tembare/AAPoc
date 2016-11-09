@@ -54,4 +54,9 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(new Intent(this,IntrosliderActivity.class));
     }
 
+    @OnClick(R.id.button_collapse)
+    public void openCollapsible(){
+    startActivity(new Intent(this,CollapsibleToolbarActivity.class));
+}
+
 }

@@ -31,7 +31,7 @@
         android:id="@+id/button_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Progress"
+        android:text="@string/progress"
         android:gravity="center_horizontal|center_vertical"
         android:layout_gravity="center_horizontal"
         android:textSize="@dimen/common_text_size_14"/>
@@ -40,6 +40,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/introslider"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/common_text_size_14"/>
+ <Button
+        android:id="@+id/button_collapse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/collapsible"
         android:gravity="center_horizontal|center_vertical"
         android:layout_gravity="center_horizontal"
         android:textSize="@dimen/common_text_size_14"/>
